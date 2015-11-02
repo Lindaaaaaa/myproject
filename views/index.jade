@@ -1,0 +1,44 @@
+doctype html
+html
+  head
+    title our app
+  h1(align='center') Welcome to "parking lot finder!"
+  style.
+    #select{
+      position:absolute;
+      top:50px;
+      left:80%;
+    }
+    #panel1 {
+    position: absolute;
+    top: 100px;
+    left: 80%;
+    margin-left: -180px;
+    z-index: 5;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+    }
+    #panel2 {
+    position: absolute;
+    top: 100px;
+    left: 90%;
+    margin-left: -180px;
+    z-index: 5;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+    }
+  script(type='text/javascript', src='http://maps.googleapis.com/maps/api/js?sensor=false')
+  script(type='text/javascript', src='/javascripts/DisabilityMap.js')
+  script(type='text/javascript', src='/javascripts/MotorMap.js')
+
+
+  body
+    p(align='right') Choose your type of vechile!!!!!!!!.
+    #divMap(style='width: 800px; height: 400px')
+    #BikeMap(style='width: 800px; height: 400px')
+    #panel1(style='margin-left: -52px')
+      button#car(onclick='initializeDisabilityCars();disableButton();disableButton2()') Disability Cars
+    #panel2(style='margin-left: -52px')
+      button#bike(onclick='initializeMotorBike();disableButton2();disableButton()') MotroBike
